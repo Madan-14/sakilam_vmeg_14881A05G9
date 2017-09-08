@@ -29,7 +29,7 @@ public class StudentGroup implements StudentArrayOperation {
 		{
 			student[i]=student[index];
 		}
-		return Student[];
+		return Student;
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
-		for(int i=0;<students.length;i++)
+		for(int i=0;i<students.length;i++)
 		{
 			Students[index]=student;
 		}
@@ -95,7 +95,7 @@ public class StudentGroup implements StudentArrayOperation {
 	public void remove(Student student) {
 	for(i=0;i<students.length();i++)
 	{
-		if(students[i]==student){student[i]=studen[i+1];;}
+		if(students[i]==student){student[i]=studen[i+1];}
 			
 	}
 	}
@@ -104,7 +104,7 @@ public class StudentGroup implements StudentArrayOperation {
 	public void removeFromIndex(int index) {
 		for(int i=index;i<students.length;i++)
 		{
-				student[i].truncate;
+				student[i].truncate();
 		}
 	}
 
@@ -139,12 +139,12 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void removeToElement(Student student) {
-		i=0;
+		int i=0;
 		do
 		{
-		students[i].truncate;
+		students[i].truncate();
 		i++;		
-		}while(students[i]==student)
+		}while(students[i]==student);
 	}
 
 	@Override
@@ -192,7 +192,7 @@ public class StudentGroup implements StudentArrayOperation {
 			}
 		}
 		
-		return Student[i].birthDate;
+		return student[i].birthDate;
 	}
 
 	@Override
@@ -226,13 +226,15 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student getNextStudent(Student student) {
+		int k=0;
 		for(int i=0;i<students.length;i++)
 		{
 			if(student[i]==student){
+				k=i;
 				break;
 			}
 			
 		}
-		return Student[i+1];
+		return student[k+1];
 	}
 }
