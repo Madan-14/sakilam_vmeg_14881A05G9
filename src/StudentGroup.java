@@ -25,155 +25,135 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getStudents() {
-		for(int i=0;i<students.length;i++)
-		{
-			student[i]=student[index];
-		}
-		return Student;
+		// Add your implementation here
+                if(students.length>0) {
+                    return students;
+                } else {
+                    return null;
+                }
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
-		for(int i=0;i<students.length;i++)
-		{
-			Student[index]=Student[i];
-		}
-	
+		// Add your implementation here
+                for(int i=0;i<students.length;i++) {
+                    this.students[i] = students[i];
+                }
+                
 	}
 
 	@Override
 	public Student getStudent(int index) {
-		Student=Student[index];
-		return student;
+		// Add your implementation here
+                if(index>students.length) {
+                    return null;
+                } else {
+                    return students[index];
+                }
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
-		for(int i=0;i<students.length;i++)
-		{
-			Students[index]=student;
-		}
+                 if(index>students.length) {
+                    
+                } else {
+                    students[index] = student;
+                 }
 	}
 
 	@Override
 	public void addFirst(Student student) {
-		
-		Students[0]=student;
+		// Add your implementation here
+                for(int i=1;i<students.length;i++) {
+                    students[i] = students[i+1];
+                }
+                students[0] = student;
 	}
 
 	@Override
 	public void addLast(Student student) {
-		for(int i=0;i<students.length-1;i++)
-		{
-			continue;
-		}
-		Student[i]=student;
+		// Add your implementation here
+                students[students.length+1] = student;
 	}
 
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
-		for(i=0;i<students.length;i++)
-		{
-			if(i==index-1){students[index]=student;}
-		}
-		
+                for(int i=index;i<students.length;i++) {
+                    students[i] = students[i+1];
+                }
+                students[index] = student;
 	}
 
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
-		for(i=index;i<students.length;i++)
-		{
-			students[i]=students[i+1];
-		}
-		
+                for(int i=index;i<students.length;i++) {
+                    students[i] = students[i+1];
+                }
 	}
 
 	@Override
 	public void remove(Student student) {
-	for(i=0;i<students.length();i++)
-	{
-		if(students[i]==student){student[i]=studen[i+1];}
-			
-	}
+		// Add your implementation here
+                int i=0;
+                for(i=0;students[i] != student;i++) {
+                
+                }
+                for(int j=i;j<students.length;j++) {
+                    students[j] = students[j+1];
+                }
 	}
 
 	@Override
 	public void removeFromIndex(int index) {
-		for(int i=index;i<students.length;i++)
-		{
-				student[i].truncate();
-		}
+		// Add your implementation here
+                for(int i=index;i<students.length;i++) {
+                    students[i] = null;
+                }
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
-		
-		for(int i=0;i<students.length;i++)
-		{
-			if((students[i].id==student[i].id)&&(students[i].Fullname==students[i].Fullname)&&(students[i].birthDate==students[i].birthDate)&&(students[i].avgMark==students[i].avgMark))
-				
-				{
-					break;
-				}
-				else
-				{
-					index=index+1;
-				}
-		}
+		// Add your implementation here
+               
 	}
 
 	@Override
 	public void removeToIndex(int index) {
-		for(int i=1;i<students.length;i++)
-		{
-			if(i+index>students.length)
-			{
-				break;
-			}
-			students[i]=students[i+1];
-		}
+		// Add your implementation here
+                for(int i=0;i<students.length;i++) {
+                    if(i+index > students.length){
+                        break;
+                    }
+                        students[i] = students[i+index];
+                }
 	}
 
 	@Override
 	public void removeToElement(Student student) {
-		int i=0;
-		do
-		{
-		students[i].truncate();
-		i++;		
-		}while(students[i]==student);
+		// Add your implementation here
+                
 	}
 
 	@Override
 	public void bubbleSort() {
-		Student s;
-		for(int i=1;i<students.length();i++)
-		{
-			for(int j=0;j<students.length()-1;j++)
-			{
-				if(student[j]>student[j+1])
-				{
-					s=student[j];
-					student[j]=student[j+1];
-					student[j+1]=s;
-				}
-			}
-		}
+		// Add your implementation here
+               
+                
 	}
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
-		// Add your implementation here
+		
 		return null;
 	}
 
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
-		return null;
+                return null;
 	}
 
 	@Override
@@ -184,57 +164,27 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
-		for(int i=0;i<students.length;i++)
-		{
-			if(i==indexOfStudent)
-			{
-				break;
-			}
-		}
-		
-		return student[i].birthDate;
+		// Add your implementation here
+		return 0;
 	}
 
 	@Override
 	public Student[] getStudentsByAge(int age) {
-		student[] stu=new student(10);
-		for(int i=0;i<students.length;i++)
-		{
-			if(students[i].birthDate==age)
-			{
-				stu[i]=students[i];
-				i+=1;
-			}
-		}
-		return stu;
+		// Add your implementation here
+               
+		return null;
 	}
 
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
-		int max=100;
-		int id=0;
-		for(int i=0;i<students.length;i++)
-		{
-			if(students[i].avgMark>max)
-			{
-				max=students[i].avgMark;
-				id=1;
-			}
-		}
-		return students[id];
+		// Add your implementation here
+                
+		return null;
 	}
 
 	@Override
 	public Student getNextStudent(Student student) {
-		int k=0;
-		for(int i=0;i<students.length;i++)
-		{
-			if(student[i]==student){
-				k=i;
-				break;
-			}
-			
-		}
-		return student[k+1];
+		// Add your implementation here
+                return null;
 	}
 }
