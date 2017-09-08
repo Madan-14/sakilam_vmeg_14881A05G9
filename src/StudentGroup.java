@@ -38,6 +38,7 @@ public class StudentGroup implements StudentArrayOperation {
 		{
 			Student[index]=Student[i];
 		}
+	
 	}
 
 	@Override
@@ -57,7 +58,8 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void addFirst(Student student) {
-		// Add your implementation here
+		
+		Students[0]=student;
 	}
 
 	@Override
@@ -147,7 +149,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void bubbleSort() {
-		String s=new String();
+		Student s;
 		for(int i=1;i<students.length();i++)
 		{
 			for(int j=0;j<students.length()-1;j++)
@@ -195,14 +197,31 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getStudentsByAge(int age) {
-		// Add your implementation here
-		return null;
+		student[] stu=new student(10);
+		for(int i=0;i<students.length;i++)
+		{
+			if(students[i].birthDate==age)
+			{
+				stu[i]=students[i];
+				i+=1;
+			}
+		}
+		return stu;
 	}
 
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
-		// Add your implementation here
-		return null;
+		int max=100;
+		int id=0;
+		for(int i=0;i<students.length;i++)
+		{
+			if(students[i].avgMark>max)
+			{
+				max=students[i].avgMark;
+				id=1;
+			}
+		}
+		return students[id];
 	}
 
 	@Override
